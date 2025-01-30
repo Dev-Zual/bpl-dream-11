@@ -1,3 +1,4 @@
+import { AiOutlineDollarCircle } from "react-icons/ai";
 import logo from "../../assets/assets/logo.png";
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
         </a>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu font-semibold text-black/70 menu-horizontal px-1">
           <li>
             <a>Home</a>
           </li>
@@ -22,7 +23,10 @@ const Header = () => {
             <a>Schedules</a>
           </li>
           <li>
-            <button className="btn btn-outline">0 Coin</button>
+            <button className="btn btn-outline font-bold">
+              0 Coin{" "}
+              <AiOutlineDollarCircle className="text-2xl text-yellow-400" />
+            </button>
           </li>
         </ul>
       </div>
