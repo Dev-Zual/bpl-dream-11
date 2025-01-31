@@ -13,6 +13,11 @@ const PlayerData = ({ freeCredit, setFreeCredit }) => {
       alert("not enough money");
       return;
     }
+    // checking if select more then 6
+    if (selected.length >= 6) {
+      alert("select complete");
+      return;
+    }
 
     // checking if player is already choose
     // const isExist = selected.find((p) => p.playerId === player.playerId);
