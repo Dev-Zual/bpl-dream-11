@@ -2,7 +2,7 @@ import "./App.css";
 import Banner from "./components/Banner/Banner";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import PlayerData from "./PlayerData/PlayerData";
+import PlayerData from "./components/PlayerData/PlayerData";
 
 function App() {
   return (

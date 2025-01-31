@@ -1,4 +1,4 @@
-import Player from "../components/Player/Player";
+import Players from "../Players/Players";
 
 const PlayerData = () => {
   return (
@@ -10,7 +10,7 @@ const PlayerData = () => {
           <button className="btn border-l-0">Selected</button>
         </div>
       </div>
-      <Player></Player>
+      <Players></Players>
     </div>
   );
 };
