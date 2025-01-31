@@ -24,6 +24,11 @@ const PlayerData = ({ freeCredit, setFreeCredit }) => {
     }
   };
 
+  const handleDeleteSelected = (id) => {
+    const remaining = selected.filter((p) => p.playerId !== id);
+    setSelected(remaining);
+  };
+
   return (
     <div className="container mx-auto">
       <div className="flex justify-between items-center mt-12 mb-5">
@@ -52,7 +57,11 @@ const PlayerData = ({ freeCredit, setFreeCredit }) => {
       {route ? (
         <Players handleSelected={handleSelected} />
       ) : (
-        <SelectedPlayers setRoute={setRoute} selected={selected} />
+        <SelectedPlayers
+          setRoute={setRoute}
+          selected={selected}
+          handleDeleteSelected={handleDeleteSelected}
+        />
       )}
     </div>
   );

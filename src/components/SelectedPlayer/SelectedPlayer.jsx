@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { RiDeleteBinLine } from "react-icons/ri";
 
-const SelectedPlayer = ({ player }) => {
-  const { name, role, image } = player;
+const SelectedPlayer = ({ player, handleDeleteSelected }) => {
+  const { name, role, image, playerId } = player;
   return (
     <div className="flex justify-between border p-4 rounded-2xl border-black/10 items-center">
       <div className="flex items-center space-x-5">
@@ -13,7 +13,10 @@ const SelectedPlayer = ({ player }) => {
         </div>
       </div>
       <div>
-        <button className="btn text-red-400 text-2xl rounded-2xl size-14">
+        <button
+          onClick={() => handleDeleteSelected(playerId)}
+          className="btn text-red-400 text-2xl rounded-2xl size-14"
+        >
           <RiDeleteBinLine />
         </button>
       </div>
@@ -23,6 +26,7 @@ const SelectedPlayer = ({ player }) => {
 
 SelectedPlayer.propTypes = {
   player: PropTypes.object.isRequired,
+  handleDeleteSelected: PropTypes.func.isRequired,
 };
 
 export default SelectedPlayer;

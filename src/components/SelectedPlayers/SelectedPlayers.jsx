@@ -1,12 +1,16 @@
 import PropTypes from "prop-types";
 import SelectedPlayer from "../SelectedPlayer/SelectedPlayer";
 
-const SelectedPlayers = ({ setRoute, selected }) => {
+const SelectedPlayers = ({ setRoute, selected, handleDeleteSelected }) => {
   return (
     <div className="space-y-5">
       <div className="space-y-3">
         {selected.map((player) => (
-          <SelectedPlayer key={player.playerId} player={player} />
+          <SelectedPlayer
+            key={player.playerId}
+            player={player}
+            handleDeleteSelected={handleDeleteSelected}
+          />
         ))}
       </div>
       <button
@@ -21,5 +25,6 @@ const SelectedPlayers = ({ setRoute, selected }) => {
 SelectedPlayers.propTypes = {
   setRoute: PropTypes.func.isRequired,
   selected: PropTypes.array.isRequired,
+  handleDeleteSelected: PropTypes.func.isRequired,
 };
 export default SelectedPlayers;
