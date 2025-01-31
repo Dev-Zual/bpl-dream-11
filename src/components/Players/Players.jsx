@@ -15,7 +15,7 @@ const Players = () => {
   return (
     <div className="grid md:grid-cols-3 gap-8">
       {players.map((player) => (
-        <Player key={player.id} player={player} />
+        <Player key={player.playerId} player={player} />
       ))}
     </div>
   );
