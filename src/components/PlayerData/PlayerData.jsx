@@ -8,6 +8,13 @@ const PlayerData = ({ freeCredit }) => {
   const [selected, setSelected] = useState([]);
 
   const handleSelected = (player) => {
+    // checking if not enough money
+    if (freeCredit < player.biddingPrice) {
+      alert("not enough money");
+      return;
+    }
+
+    // checking if player is already choose
     // const isExist = selected.find((p) => p.playerId === player.playerId);
     if (!selected.includes(player)) {
       setSelected([...selected, player]);
