@@ -3,7 +3,7 @@ import Players from "../Players/Players";
 import SelectedPlayers from "../SelectedPlayers/SelectedPlayers";
 import PropTypes from "prop-types";
 
-const PlayerData = ({ freeCredit }) => {
+const PlayerData = ({ freeCredit, setFreeCredit }) => {
   const [route, setRoute] = useState(true);
   const [selected, setSelected] = useState([]);
 
@@ -18,6 +18,7 @@ const PlayerData = ({ freeCredit }) => {
     // const isExist = selected.find((p) => p.playerId === player.playerId);
     if (!selected.includes(player)) {
       setSelected([...selected, player]);
+      setFreeCredit(freeCredit - player.biddingPrice);
     } else {
       alert("alreaday exist");
     }
@@ -58,5 +59,6 @@ const PlayerData = ({ freeCredit }) => {
 };
 PlayerData.propTypes = {
   freeCredit: PropTypes.number.isRequired,
+  setFreeCredit: PropTypes.func.isRequired,
 };
 export default PlayerData;
