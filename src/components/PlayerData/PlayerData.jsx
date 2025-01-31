@@ -4,6 +4,7 @@ import SelectedPlayers from "../SelectedPlayers/SelectedPlayers";
 
 const PlayerData = () => {
   const [route, setRoute] = useState(true);
+
   return (
     <div className="container mx-auto">
       <div className="flex justify-between items-center mt-12 mb-5">
@@ -27,7 +28,7 @@ const PlayerData = () => {
           </button>
         </div>
       </div>
-      {route ? <Players /> : <SelectedPlayers />}
+      {route ? <Players /> : <SelectedPlayers setRoute={setRoute} />}
     </div>
   );
 };
