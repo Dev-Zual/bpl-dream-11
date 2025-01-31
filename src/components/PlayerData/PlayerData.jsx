@@ -7,7 +7,11 @@ const PlayerData = () => {
   return (
     <div className="container mx-auto">
       <div className="flex justify-between items-center mt-12 mb-5">
-        <h2 className="text-2xl font-bold">Available Players</h2>
+        {route ? (
+          <h2 className="text-2xl font-bold">Available Players</h2>
+        ) : (
+          <h2 className="text-2xl font-bold">Selected Player (0/6)</h2>
+        )}
         <div>
           <button
             onClick={() => setRoute(!route)}
