@@ -4,7 +4,7 @@
 
 This is a web app where you can select players and can make your own team
 
-#Technologies used
+### Technologies used
 
 - React (vite)
 - React-Toastify
@@ -12,7 +12,7 @@ This is a web app where you can select players and can make your own team
 - Tailwindcss
 - Daisyui
 
-#key features
+### key features
 
 - you can claim unlimited free credit and your credit balance will show top of the navbar
 - if you not claim credit you can't buy players
