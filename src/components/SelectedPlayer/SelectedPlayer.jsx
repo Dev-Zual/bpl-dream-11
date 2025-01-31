@@ -1,13 +1,15 @@
+import PropTypes from "prop-types";
 import { RiDeleteBinLine } from "react-icons/ri";
 
-const SelectedPlayer = () => {
+const SelectedPlayer = ({ player }) => {
+  const { name, role, image } = player;
   return (
-    <div className="flex justify-between border p-2 rounded-2xl border-black/10 items-center">
-      <div className="flex items-center space-x-2">
-        <img src="" alt="" />
+    <div className="flex justify-between border p-4 rounded-2xl border-black/10 items-center">
+      <div className="flex items-center space-x-5">
+        <img className="size-16 rounded-2xl" src={image} alt="" />
         <div>
-          <h3 className="text-xl font-medium">name</h3>
-          <p>left-handed-bat</p>
+          <h3 className="text-xl font-medium">{name}</h3>
+          <p>{role}</p>
         </div>
       </div>
       <div>
@@ -17,6 +19,10 @@ const SelectedPlayer = () => {
       </div>
     </div>
   );
+};
+
+SelectedPlayer.propTypes = {
+  player: PropTypes.object.isRequired,
 };
 
 export default SelectedPlayer;

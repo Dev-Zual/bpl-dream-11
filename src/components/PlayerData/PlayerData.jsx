@@ -16,7 +16,9 @@ const PlayerData = () => {
         {route ? (
           <h2 className="text-2xl font-bold">Available Players</h2>
         ) : (
-          <h2 className="text-2xl font-bold">Selected Player (0/6)</h2>
+          <h2 className="text-2xl font-bold">
+            Selected Player ({selected.length}/6)
+          </h2>
         )}
         <div>
           <button
@@ -36,7 +38,7 @@ const PlayerData = () => {
       {route ? (
         <Players handleSelected={handleSelected} />
       ) : (
-        <SelectedPlayers setRoute={setRoute} />
+        <SelectedPlayers setRoute={setRoute} selected={selected} />
       )}
     </div>
   );
