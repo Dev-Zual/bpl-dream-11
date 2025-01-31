@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { HiUser } from "react-icons/hi";
 import { IoFlag } from "react-icons/io5";
 
@@ -41,6 +42,10 @@ const Player = ({ player }) => {
       </div>
     </div>
   );
+};
+
+Player.propTypes = {
+  player: PropTypes.object.isRequired,
 };
 
 export default Player;
