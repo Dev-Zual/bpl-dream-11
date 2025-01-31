@@ -1,6 +1,7 @@
 import bannerBg from "../../assets/assets/bg-shadow.png";
 import bannerImg from "../../assets/assets/banner-main.png";
-const Banner = () => {
+import PropTypes from "prop-types";
+const Banner = ({ handleFreeCredit }) => {
   return (
     <div className="container mx-auto mt-5">
       <div
@@ -19,7 +20,10 @@ const Banner = () => {
               Assemble Your Ultimate Dream 11 Cricket Team
             </h1>
             <p className="mb-5 text-2xl">Beyond Boundaries Beyond Limits</p>
-            <button className="btn bg-yellow-400 border-8 py-5 border-[#191919] ring-1 rounded-2xl font-semibold text-xl ring-yellow-400">
+            <button
+              onClick={handleFreeCredit}
+              className="btn bg-yellow-400 border-8 py-5 border-[#191919] ring-1 rounded-2xl font-semibold text-xl ring-yellow-400"
+            >
               Claim Free Credit
             </button>
           </div>
@@ -28,5 +32,7 @@ const Banner = () => {
     </div>
   );
 };
-
+Banner.propTypes = {
+  handleFreeCredit: PropTypes.func.isRequired,
+};
 export default Banner;

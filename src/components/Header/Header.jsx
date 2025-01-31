@@ -1,6 +1,7 @@
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import logo from "../../assets/assets/logo.png";
-const Header = () => {
+import PropTypes from "prop-types";
+const Header = ({ freeCredit }) => {
   return (
     <div className="navbar bg-base-100 ">
       <div className="flex-1">
@@ -24,7 +25,7 @@ const Header = () => {
           </li>
           <li>
             <button className="btn btn-outline font-bold">
-              0 Coin{" "}
+              {freeCredit} Coin
               <AiOutlineDollarCircle className="text-2xl text-yellow-400" />
             </button>
           </li>
@@ -33,5 +34,7 @@ const Header = () => {
     </div>
   );
 };
-
+Header.propTypes = {
+  freeCredit: PropTypes.number.isRequired,
+};
 export default Header;
