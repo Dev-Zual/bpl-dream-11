@@ -4,6 +4,11 @@ import SelectedPlayers from "../SelectedPlayers/SelectedPlayers";
 
 const PlayerData = () => {
   const [route, setRoute] = useState(true);
+  const [selected, setSelected] = useState([]);
+
+  const handleSelected = (player) => {
+    setSelected([...selected, player]);
+  };
 
   return (
     <div className="container mx-auto">
@@ -24,11 +29,15 @@ const PlayerData = () => {
             onClick={() => setRoute(!route)}
             className={`btn border-l-0 ${!route && "bg-yellow-300"}`}
           >
-            Selected
+            Selected {selected.length}
           </button>
         </div>
       </div>
-      {route ? <Players /> : <SelectedPlayers setRoute={setRoute} />}
+      {route ? (
+        <Players handleSelected={handleSelected} />
+      ) : (
+        <SelectedPlayers setRoute={setRoute} />
+      )}
     </div>
   );
 };
