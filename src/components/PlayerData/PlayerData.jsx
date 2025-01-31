@@ -2,7 +2,7 @@ import { useState } from "react";
 import Players from "../Players/Players";
 import SelectedPlayers from "../SelectedPlayers/SelectedPlayers";
 import PropTypes from "prop-types";
-
+import { toast } from "react-toastify";
 const PlayerData = ({ freeCredit, setFreeCredit }) => {
   const [route, setRoute] = useState(true);
   const [selected, setSelected] = useState([]);
@@ -10,22 +10,27 @@ const PlayerData = ({ freeCredit, setFreeCredit }) => {
   const handleSelected = (player) => {
     // checking if not enough money
     if (freeCredit < player.biddingPrice) {
-      alert("not enough money");
+      toast.error("Error, Not enough money", { position: "top-center" });
       return;
     }
     // checking if select more then 6
     if (selected.length >= 6) {
-      alert("select complete");
+      toast.error("Error, Already selected 6 player", {
+        position: "top-center",
+      });
       return;
     }
 
     // checking if player is already choose
-    // const isExist = selected.find((p) => p.playerId === player.playerId);
-    if (!selected.includes(player)) {
+    const isExist = selected.find((p) => p.playerId === player.playerId);
+    if (!isExist) {
       setSelected([...selected, player]);
       setFreeCredit(freeCredit - player.biddingPrice);
+      toast.success(`${player.name}, Selected`, { position: "top-center" });
     } else {
-      alert("alreaday exist");
+      toast.error(`${player.name} Already selected`, {
+        position: "top-center",
+      });
     }
   };
 
