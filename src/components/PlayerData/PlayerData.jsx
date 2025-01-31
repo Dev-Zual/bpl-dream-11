@@ -1,13 +1,19 @@
 import { useState } from "react";
 import Players from "../Players/Players";
 import SelectedPlayers from "../SelectedPlayers/SelectedPlayers";
+import PropTypes from "prop-types";
 
-const PlayerData = () => {
+const PlayerData = ({ freeCredit }) => {
   const [route, setRoute] = useState(true);
   const [selected, setSelected] = useState([]);
 
   const handleSelected = (player) => {
-    setSelected([...selected, player]);
+    // const isExist = selected.find((p) => p.playerId === player.playerId);
+    if (!selected.includes(player)) {
+      setSelected([...selected, player]);
+    } else {
+      alert("alreaday exist");
+    }
   };
 
   return (
@@ -43,5 +49,7 @@ const PlayerData = () => {
     </div>
   );
 };
-
+PlayerData.propTypes = {
+  freeCredit: PropTypes.number.isRequired,
+};
 export default PlayerData;

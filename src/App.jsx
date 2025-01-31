@@ -16,7 +16,7 @@ function App() {
         <Header freeCredit={freeCredit}></Header>
       </header>
       <Banner handleFreeCredit={handleFreeCredit}></Banner>
-      <PlayerData></PlayerData>
+      <PlayerData freeCredit={freeCredit}></PlayerData>
       <Footer></Footer>
     </>
   );
