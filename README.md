@@ -1,8 +1,21 @@
-# React + Vite
+# BPl Dream 11
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Make your own team by selecting players
 
-Currently, two official plugins are available:
+This is a web app where you can select players and can make your own team
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#Technologies used
+
+- React (vite)
+- React-Toastify
+- React prop-types
+- Tailwindcss
+- Daisyui
+
+#key features
+
+- you can claim unlimited free credit and your credit balance will show top of the navbar
+- if you not claim credit you can't buy players
+- click choose button and selected player will be display in selected player page
+- click selected player button to see the selected players
+- in the selected players page you can delete a player and choose again
