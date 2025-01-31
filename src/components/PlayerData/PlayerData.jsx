@@ -1,16 +1,29 @@
+import { useState } from "react";
 import Players from "../Players/Players";
+import SelectedPlayers from "../SelectedPlayers/SelectedPlayers";
 
 const PlayerData = () => {
+  const [route, setRoute] = useState(true);
   return (
     <div className="container mx-auto">
       <div className="flex justify-between items-center mt-12 mb-5">
         <h2 className="text-2xl font-bold">Available Players</h2>
         <div>
-          <button className="btn border-r-0 bg-yellow-300">Available</button>
-          <button className="btn border-l-0">Selected</button>
+          <button
+            onClick={() => setRoute(!route)}
+            className={`btn border-r-0 ${route && "bg-yellow-300"}`}
+          >
+            Available
+          </button>
+          <button
+            onClick={() => setRoute(!route)}
+            className={`btn border-l-0 ${!route && "bg-yellow-300"}`}
+          >
+            Selected
+          </button>
         </div>
       </div>
-      <Players></Players>
+      {route ? <Players /> : <SelectedPlayers />}
     </div>
   );
 };
