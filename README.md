@@ -1,6 +1,6 @@
 # BPl Dream 11
 
-(live site)(https://app-bpl-dream-11.netlify.app/)
+[live site](https://app-bpl-dream-11.netlify.app/)
 
 ## Make your own team by selecting players
 
