@@ -1,5 +1,7 @@
 # BPl Dream 11
 
+(live site)[https://app-bpl-dream-11.netlify.app/]
+
 ## Make your own team by selecting players
 
 This is a web app where you can select players and can make your own team
